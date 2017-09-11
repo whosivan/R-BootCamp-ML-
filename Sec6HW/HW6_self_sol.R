@@ -1,5 +1,5 @@
 getwd()
-setwd("/Users/IvanC/R/Sec6HW/")
+setwd("/Users/IvanC/R/R-BootCamp-ML-/Sec6HW/")
 hwdata <- read.csv("Section6-Homework-Data.csv")
 
 head(hwdata)
@@ -9,6 +9,7 @@ desire_studio <- c("Buena Vista Studios", "Fox", "Paramount Pictures", "Sony", "
 
 df <- subset(hwdata, Genre %in% desire_genre)
 dff <- subset(df, Studio %in% desire_studio)
+head(dff)
 #---------
 
 
@@ -18,5 +19,5 @@ w + geom_jitter(aes(color = Studio, size = Budget_inmill)) + geom_boxplot(alpha 
   theme(axis.title.x = element_text(color = "Blue", size = 20),
         axis.title.y = element_text(color = "Blue", size = 20),
         plot.title = element_text(color = "Black", size = 20),
-        text = element_text(family = "Comic Sans MS")
+        text = element_text(family = "Times New Roman")
         )
