@@ -5,7 +5,7 @@ head(mpg)
 
 #1.
 pl1 <- ggplot(data = mpg, aes(x = hwy))
-pl1 + geom_histogram(bins = 20, fill = "orange")
+pl1 + geom_histogram(bins = 20, fill = "red")
 
 #2.
 pl2 <- ggplot(data = mpg, aes(x = manufacturer)) 
