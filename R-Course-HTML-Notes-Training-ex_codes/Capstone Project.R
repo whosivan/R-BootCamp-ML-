@@ -50,3 +50,6 @@ combo <- subset(combo, salary < 8000000, OBP > 0)
 combo <- subset(combo, AB >= 450)
 options <- head(arrange(combo, desc(OBP)), n = 10)
 options[, c('playerID', 'AB', 'salary')]
+
+batting
+fix(batting)
