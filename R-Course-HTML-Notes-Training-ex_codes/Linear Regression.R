@@ -33,6 +33,7 @@ set.seed(101)
 #split up sample
 sample <- sample.split(df$G3, SplitRatio = 0.7)
 train <- subset(df, sample == TRUE) #the 70% training data
+test <- subset(df, sample == FALSE)
 
 #Train and build model
 model <- lm(G3 ~ ., data = train)
@@ -41,3 +42,10 @@ summary(model)
 res <- residuals(model)
 res <- as.data.frame(res)
 ggplot(res, aes(res)) + geom_histogram(fill = 'blue', alpha = 0.5)
+
+#prediction
+G3.prediction <- predict(model, test)
+results <- cbind(G3.prediction, test$G3)
+colnames(results) <- c('predictied', 'actual')
+results <- as.data.frame(results)
+head(results)
