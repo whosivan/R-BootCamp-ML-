@@ -30,3 +30,7 @@ pl2 <- ggplot(filter(bike, workingday == 1), aes(hour, count))
 pl2 + geom_point(position = position_jitter(w = 1, h = 0), aes(color = temp), alpha = 0.5) + 
   scale_color_gradientn(colours = c("dark blue", "blue", "light blue", "light green", "yellow", "orange", "red"))
 
+
+#build model
+temp.model <- lm(count ~ . -casual - registered - datetime - atemp, bike)
+summary(temp.model)
